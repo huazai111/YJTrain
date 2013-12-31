@@ -47,6 +47,12 @@ static int translate(lua_State *L) {
 }
 
 // wax.CGTransform.rotate(transform, angle) -- Returns new transform
+static int transformMakeRotation(lua_State *L)
+{
+    CGAffineTransform transform = CGAffineTransformMakeRotation(luaL_checknumber(L, 1));
+    wax_fromObjc(L, @encode(CGAffineTransform), &transform);
+    return 1;
+}
 static int rotate(lua_State *L) {
     void *value = wax_copyToObjc(L, @encode(CGAffineTransform), 1, nil);
     CGAffineTransform transform = *(CGAffineTransform *)value;
@@ -68,6 +74,7 @@ static const struct luaL_Reg functions[] = {
     {"scale", scale},
     {"translate", translate},
     {"rotate", rotate},
+    {"transformMakeRotation", transformMakeRotation},
     
     {NULL, NULL}
 };

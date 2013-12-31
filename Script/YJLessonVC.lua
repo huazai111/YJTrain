@@ -13,6 +13,8 @@ function viewDidLoad( self )
 	self:view():setBackgroundColor(UIColor:lightGrayColor())
     self.dataToShow={}
 
+    
+
     loadData(self)
     count=#self.dataToShow
     beginY=20
@@ -20,6 +22,7 @@ function viewDidLoad( self )
     conHeight=beginY+count*item_heght
 	createView(self)
 end
+
 function createView(self)
 
     local  bounds=self:view():bounds()
@@ -64,7 +67,15 @@ function createView(self)
 		bu:layer():setShadowColor(UIColor:blackColor():CGColor())
 		bu:layer():setShadowRadius(math.pi/2)
 		bu:layer():setShadowOpacity(.8)
+
+
+		local flagIm = UIImageView:initWithFrame(CGRect(300,15,10,14))
+		flagIm:setImage(UIImage:imageNamed("flag.png"))
+		flagIm:setTag(1000)--表示想不懂  tag怎么会和but的冲突  相当鄙视 只有设置个很大的值喽，如果图片数目超过500  有bug哦  嘎嘎。。。。
+		bu:addSubview(flagIm)
+
 		sc:addSubview(bu)
+
 
 		local im = UIImageView:initWithFrame(CGRect(5,2,40,40))
 		local imPath = self.path.."/"..i..".png"
@@ -94,12 +105,17 @@ function setUpScConSize( self )
 			sc:setContentSize(CGSize(sc_width,sc_height))
 	end
 end
+
 function cellPressed( self,but )
 
 	local obj = self.dataToShow[but:tag()]
 	local rect = but:frame()
 	obj["select"]=not obj["select"]
 	if obj["select"] then
+
+		local flagIm = but:viewWithTag(1000)
+		flagIm:setTransform(wax.CGTransform.transformMakeRotation(math.pi/2))
+
 		local path = self.path.."/"..but:tag().."_"..obj["name"]..".png"
 		local  img = UIImage:imageWithContentsOfFile(path)
 		local size = img:size()
@@ -146,6 +162,9 @@ function cellPressed( self,but )
 			end
 
 		else
+			local flagIm = but:viewWithTag(1000)
+		    flagIm:setTransform(wax.CGTransform.identity())
+
 			local but_im = sc:viewWithTag(but:tag()+count)
 			if but_im~=nil then
 				local im_h = but_im:frame()["height"]

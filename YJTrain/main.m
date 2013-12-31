@@ -12,9 +12,10 @@
 #import "wax_http.h"
 #import "wax_json.h"
 #import "wax_filesystem.h"
+#import "wax_CGTransform.h"
 int main(int argc, char *argv[]) {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    wax_start("AppDelegate", luaopen_wax_http, luaopen_wax_json,luaopen_wax_filesystem, nil);
+    wax_start("AppDelegate", luaopen_wax_http, luaopen_wax_json,luaopen_wax_filesystem,luaopen_wax_CGTransform, nil);
     int retVal = UIApplicationMain(argc, argv, nil, @"AppDelegate");
     [pool release];
     return retVal;

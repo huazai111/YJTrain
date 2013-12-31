@@ -93,7 +93,7 @@ function tableView_cellForRowAtIndexPath(self, tableView, indexPath)
   cell:textLabel():setText(title)
   cell:setAccessoryType(UITableViewCellAccessoryDisclosureIndicator)
   cell:imageView():setImage(UIImage:imageWithContentsOfFile(self.path.."/"..title..".png"))
-  cell:detailTextLabel():setText(self.path.."/"..title)
+  --cell:detailTextLabel():setText(self.path.."/"..title)
   return cell
 end
 function tableView_didSelectRowAtIndexPath( self, tableView, indexPath )

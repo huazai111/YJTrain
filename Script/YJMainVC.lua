@@ -2,10 +2,12 @@
 require "YJSortListVC"
 require "YJSearchVC"
 require "YJWarnVC"
+require "YJLogin"
 waxClass{"YJMainVC",UIViewController,protocols={"UIAlertViewDelegate"}}
 function viewDidLoad(self)
 	self.super:viewDidLoad()
 	self:view():setBackgroundColor(UIColor:whiteColor());
+	showLoginEnd=false;
 	createView(self)
 end
 function init(self)
@@ -13,7 +15,14 @@ function init(self)
 	self:setTitle("主界面")
 	return self
 end
-
+function viewWillAppear( self,animation )
+	self.super:viewWillAppear(animation)
+	if not showLoginEnd then showLoginVC(self) showLoginEnd=true end
+end
+function showLoginVC( self )
+	local vc=YJLogin:init(path)
+	self:presentModalViewController_animated(vc,true)
+end
 function createView( self )
 	
 	titleArr={}
@@ -33,7 +42,7 @@ function createView( self )
 	local infoBu=UIButton:buttonWithType(UIButtonTypeInfoLight)
 	infoBu:setFrame(CGRect(0,0,44,44))
 	infoBu:addTarget_action_forControlEvents(self,"infoBuPressed",UIControlEventTouchUpInside)
-	self:view():addSubview(infoBu)
+	--self:view():addSubview(infoBu)
 
 	local searchBu=UIButton:buttonWithType(UIButtonTypeCustom)
 	searchBu:setFrame(CGRect(250,6.5,54,31))
