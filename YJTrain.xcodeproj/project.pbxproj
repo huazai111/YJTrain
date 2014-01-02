@@ -94,6 +94,7 @@
 		3B01053A18693D4F0068E942 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B01053918693D4F0068E942 /* QuartzCore.framework */; };
 		3B01053C18693D7A0068E942 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B01053B18693D790068E942 /* libsqlite3.dylib */; };
 		3B01054018695C900068E942 /* img_nav_main.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B01053F18695C900068E942 /* img_nav_main.png */; };
+		3B0D9DDE18751EC500359418 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B0D9DDD18751EC500359418 /* icon.png */; };
 		3B124F51186A861000970E29 /* YJLessonVC.lua in Resources */ = {isa = PBXBuildFile; fileRef = 3B124F50186A861000970E29 /* YJLessonVC.lua */; };
 		3B1A2FF8186D705600394D39 /* flag.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B1A2FF7186D705600394D39 /* flag.png */; };
 		3B276433186928C500F32052 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B276432186928C500F32052 /* UIKit.framework */; };
@@ -256,6 +257,7 @@
 		3B01053918693D4F0068E942 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3B01053B18693D790068E942 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3B01053F18695C900068E942 /* img_nav_main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = img_nav_main.png; path = Res/Image/img_nav_main.png; sourceTree = "<group>"; };
+		3B0D9DDD18751EC500359418 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Res/Image/icon.png; sourceTree = "<group>"; };
 		3B124F50186A861000970E29 /* YJLessonVC.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = YJLessonVC.lua; path = Script/YJLessonVC.lua; sourceTree = "<group>"; };
 		3B1A2FF7186D705600394D39 /* flag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flag.png; path = Res/Image/flag.png; sourceTree = "<group>"; };
 		3B27642F186928C500F32052 /* YJTrain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YJTrain.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -551,6 +553,7 @@
 		3B01053E18695C810068E942 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				3B0D9DDD18751EC500359418 /* icon.png */,
 				3BEB065A1872C19C009630A2 /* login_bg.png */,
 				3B1A2FF7186D705600394D39 /* flag.png */,
 				3B622D82186ABEA200986121 /* bg_but.png */,
@@ -759,6 +762,7 @@
 				3B1A2FF8186D705600394D39 /* flag.png in Resources */,
 				3BEB06591872BDE6009630A2 /* YJLogin.lua in Resources */,
 				3BEB065B1872C19C009630A2 /* login_bg.png in Resources */,
+				3B0D9DDE18751EC500359418 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
